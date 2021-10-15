@@ -1,10 +1,13 @@
 import React from 'react'
+import productData from '../assets/fake-data/products'
+import Helmet from '../components/Helmet'
 
-const Product = () => {
+const Product = (props) => {    
+    const product = productData.getProductBySlug(props.match.params.slug)
     return (
-        <div>
+        <Helmet title={product.title}>
             product
-        </div>
+        </Helmet>
     )
 }
 
