@@ -23,7 +23,7 @@ const PolicyCard = props => {
 PolicyCard.propTypes = {    
     name:PropTypes.string.isRequired,
     description:PropTypes.string.isRequired,
-    icon:PropTypes.string.isRequired,
+    icon:PropTypes.func.isRequired,
 }
 
 export default PolicyCard

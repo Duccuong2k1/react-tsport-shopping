@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from 'prop-types';
-import { BiCart } from "react-icons/bi";
 
 const Button = props => {
     const {icon:Icon} = props
@@ -31,7 +30,7 @@ const Button = props => {
 
 Button.propTypes = {
     backgroundColor: PropTypes.string,
-    icon: PropTypes.string,
+    icon: PropTypes.func,
     size: PropTypes.string,
     animate: PropTypes.bool,
     onClick: PropTypes.func,

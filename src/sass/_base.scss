@@ -25,6 +25,10 @@ a {
     color: unset;
 }
 
+img {
+    max-width: 100%;
+}
+
 @each $color,
 $val in $colors {
     .color-#{$color} {
