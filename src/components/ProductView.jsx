@@ -21,7 +21,7 @@ const ProductView = props => {
         }
     }
     useEffect(() => {
-        setPreviewImage(props.image01);
+        setPreviewImage(product.image01);
         setColor(undefined);
         setQuantity(1);
         setSize(undefined);
