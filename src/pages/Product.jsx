@@ -1,12 +1,46 @@
 import React from 'react'
 import productData from '../assets/fake-data/products'
+import Grid from '../components/Grid'
 import Helmet from '../components/Helmet'
+import ProductCard from '../components/ProductCard'
+import Section, { SectionBody, SectionTitle } from '../components/Section'
 
 const Product = (props) => {    
-    const product = productData.getProductBySlug(props.match.params.slug)
+    const product = productData.getProductBySlug(props.match.params.slug);
+    const relatedProduct = productData.getProducts(8);
     return (
         <Helmet title={product.title}>
-            product
+            <Section>
+                <SectionBody>
+                    {product.title}
+                </SectionBody>
+            </Section>
+            <Section>
+                <SectionTitle>
+                    khán phá thêm
+                </SectionTitle>
+                <SectionBody>
+                    <Grid
+                        col={4}
+                        mdCol={2}
+                        smCol={1}
+                        gap={10}
+                    >
+                    {relatedProduct.map((item, index) =>(
+                        <ProductCard 
+
+                            key={index}
+                            img01={item.image01}
+                            img02={item.image02}
+                            name={item.name}
+                            price={Number(item.price)}
+                            slug={item.slug}
+                        />
+                    ))}
+
+                    </Grid>
+                </SectionBody>
+            </Section>
         </Helmet>
     )
 }

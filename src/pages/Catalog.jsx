@@ -173,7 +173,7 @@ const Catalog = () => {
                     </div>
                 </div>
                 <div className="catalog__filter__toggle">
-                    <Button size="sm" onClick={()=> showHideFilter()}>Bo loc</Button>
+                    <Button size="sm" onClick={()=> showHideFilter()}>Bộ lọc</Button>
                 </div>
                 <div className="catalog__content">
                         <InfinityList data={products} />

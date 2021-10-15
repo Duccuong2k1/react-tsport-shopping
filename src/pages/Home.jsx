@@ -53,7 +53,7 @@ const Home = () => {
                     <Grid
                         col={4}
                         mdCol={2}
-                        smCol={1}
+                        smCol={2}
                         gap={20}
                     >
                         {productData.getProducts(4).map((product,index)=>(
@@ -77,8 +77,8 @@ const Home = () => {
                 <SectionBody>
                     <Grid
                         col={4}
-                        mdCol={2}
-                        smCol={1}
+                        mdCol={3}
+                        smCol={2}
                         gap={20}
                     >
                         {productData.getProducts(8).map((product,index)=>(
@@ -108,9 +108,9 @@ const Home = () => {
                 </SectionTitle>
                 <SectionBody>
                     <Grid
-                        col={4}
-                        mdCol={2}
-                        smCol={1}
+                        col={5}
+                        mdCol={3}
+                        smCol={2}
                         gap={20}
                     >
                         {productData.getProducts(15).map((product,index)=>(
