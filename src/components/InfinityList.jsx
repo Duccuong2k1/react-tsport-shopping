@@ -19,9 +19,11 @@ const InfinityList = (props) => {
     // load more data
     useEffect(() => {
         window.addEventListener('scroll',()=>{
-            if(window.scrollY + window.innerHeight >= listRef.current.clientHeight + listRef.current.offsetTop + 200){
-                console.log('dfsf load')
-                setLoad(true)
+            if (listRef && listRef.current) {
+                if (window.scrollY + window.innerHeight >= listRef.current.clientHeight + listRef.current.offsetTop + 200) {
+                    console.log("bottom reach")
+                    setLoad(true)
+                }
             }
         })
         
