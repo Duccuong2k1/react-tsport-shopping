@@ -1,18 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import productData from '../assets/fake-data/products'
 import Grid from '../components/Grid'
 import Helmet from '../components/Helmet'
 import ProductCard from '../components/ProductCard'
+import ProductView from '../components/ProductView'
 import Section, { SectionBody, SectionTitle } from '../components/Section'
 
 const Product = (props) => {    
     const product = productData.getProductBySlug(props.match.params.slug);
     const relatedProduct = productData.getProducts(8);
+
+
     return (
         <Helmet title={product.title}>
             <Section>
                 <SectionBody>
-                    {product.title}
+                    <ProductView product={product}/>
                 </SectionBody>
             </Section>
             <Section>
@@ -32,7 +35,7 @@ const Product = (props) => {
                             key={index}
                             img01={item.image01}
                             img02={item.image02}
-                            name={item.name}
+                            name={item.title}
                             price={Number(item.price)}
                             slug={item.slug}
                         />
