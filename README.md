@@ -16,3 +16,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ![image](https://user-images.githubusercontent.com/69525844/137456505-821ea0d0-e9d7-4efe-92a1-f6be9555df13.png)
 ![image](https://user-images.githubusercontent.com/69525844/137456562-974b4ec8-62ff-4d77-a09e-4ebbc6d24297.png)
 
+![image](https://user-images.githubusercontent.com/69525844/137602152-d2bcf80e-6bd4-426f-9e53-1b506c8810eb.png)
+![image](https://user-images.githubusercontent.com/69525844/137602159-c8cca9df-2c5a-41af-9014-a7364291a534.png)
+
