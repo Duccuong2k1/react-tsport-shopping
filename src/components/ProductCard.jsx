@@ -5,7 +5,11 @@ import Button from './Button';
 import { BsCartCheck } from "react-icons/bs";
 import  numberWithCommas  from '../utils/numberWithCommas';
 
+import {set} from '../redux/slice/productModal/productModalSlice';
+import { useDispatch } from 'react-redux';
+
 const ProductCard = props => {
+    const dispatch = useDispatch()
     return (
         <div className="product-card">
             <Link to={`/catalog/${props.slug}`}>
@@ -26,6 +30,7 @@ const ProductCard = props => {
                     size="sm"
                     icon={BsCartCheck}
                     animate={true}
+                    onClick={() => dispatch(set(props.slug))}
                 >
                     buy now
                 </Button>

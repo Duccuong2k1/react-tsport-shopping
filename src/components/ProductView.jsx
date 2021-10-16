@@ -4,9 +4,19 @@ import Button from '../components/Button';
 import numberWithCommas from '../utils/numberWithCommas';
 import { BiMinus } from "react-icons/bi";
 import { BsPlus } from "react-icons/bs";
+import { withRouter } from 'react-router';
 
 const ProductView = props => {
-    const product = props.product;
+    let product = props.product;
+
+    if(product === undefined) product ={
+        price:0,
+        title:'',
+        colors:[],
+        size:[]
+    }
+
+
     const [previewImage,setPreviewImage] = useState(product.image01)
     const [description,setDescription] = useState(false);
     const [color,setColor] = useState(undefined);
@@ -22,10 +32,33 @@ const ProductView = props => {
     }
     useEffect(() => {
         setPreviewImage(product.image01);
-        setColor(undefined);
         setQuantity(1);
+        setColor(undefined);
         setSize(undefined);
-    },[])
+    },[product]);
+    const check = () => {
+        if(color === undefined){
+            alert('vui long chon mau sac');
+            return false;
+        }
+        if(size === undefined){
+            alert('vui long chon kich thuoc');
+            return false;
+        }
+
+        return true;
+    }
+
+    const addToCart = () =>{
+        if(check()) {
+            console.log({color,size,quantity});
+        }
+    }
+    const goToCart = () =>{
+        if(check()) {
+            props.history.push('/cart');
+        }
+    }
     return (
         <div className="product">
             <div className="product__images">
@@ -116,13 +149,30 @@ const ProductView = props => {
                         </div>
                     </div>
                 </div>
+                <div className="product__info__item">
+                    <Button size="sm" onClick={() => addToCart()}>thêm vào giỏ hàng</Button>
+                    <Button size="sm" onClick={() => goToCart()}>mua ngay</Button>
+                </div>
             </div>
+            <div className={`product-description mobile ${description ? 'expand' : ''}`}>
+                    <div className="product-description__title">
+                        chi tiết sản phẩn
+                    </div>
+                    <div className="product-description__content"
+                        dangerouslySetInnerHTML={{__html:product.description}}
+                    ></div>
+                    <div className="product-description__toggle">
+                        <Button size="sm" onClick={()=> setDescription(!description)}>
+                            {description ? 'thu gọn': 'xem thêm'}
+                        </Button>
+                    </div>
+                </div>
         </div>
     )
 }
 
 ProductView.propTypes = {
-    products: PropTypes.object.isRequired,
+    products: PropTypes.object,
 }
 
-export default ProductView
+export default withRouter(ProductView)
