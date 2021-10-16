@@ -1,12 +1,17 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router';
+import { useDispatch } from 'react-redux';
+
+import { BsPlus } from "react-icons/bs";
+import { BiMinus } from "react-icons/bi";
+
 import Button from '../components/Button';
 import numberWithCommas from '../utils/numberWithCommas';
-import { BiMinus } from "react-icons/bi";
-import { BsPlus } from "react-icons/bs";
-import { withRouter } from 'react-router';
+import { addItem } from '../redux/slice/cart/cartSlice';
 
 const ProductView = props => {
+    const dispatch = useDispatch();
     let product = props.product;
 
     if(product === undefined) product ={
@@ -51,11 +56,24 @@ const ProductView = props => {
 
     const addToCart = () =>{
         if(check()) {
-            console.log({color,size,quantity});
+            dispatch(addItem({
+                "slug":product.slug,
+                "color":color,
+                "size":size,
+                "quantity":quantity,
+                "price":product.price,
+            }))
         }
     }
     const goToCart = () =>{
         if(check()) {
+            dispatch(addItem({
+                "slug":product.slug,
+                "color":color,
+                "size":size,
+                "quantity":quantity,
+                "price":product.price,
+            }))
             props.history.push('/cart');
         }
     }
