@@ -3,12 +3,20 @@ import PropTypes from 'prop-types'
 
 const Input = props => {
     return (
-        <input
-            type={props.type}
-            value={props.value}
-            placeholder={props.placeholder}
-            onClick={props.onClick ? (e) => props.onClick(e) : null}
-        />
+        <>
+
+            <label htmlFor={props.id}>
+            {props.label}
+            </label>
+            <input
+                className={`input ${props.className}`}
+                id={props.id}
+                type={props.type}
+                value={props.value}
+                placeholder={props.placeholder}
+                onClick={props.onClick ? (e) => props.onClick(e) : null}
+            />
+        </>
     )
 }
 

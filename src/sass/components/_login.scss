@@ -1,0 +1,55 @@
+.login {
+    @include flex(center, space-around);
+    @include tablet {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+    &-left {
+        width: 40%;
+        &>* {
+            margin-bottom: 30px;
+        }
+        h3 {
+            font-size: 5rem;
+            color: $main-color;
+            font-weight: 600;
+        }
+        p {
+            font-size: 2.5rem;
+        }
+    }
+    &-right {
+        flex-grow: 1;
+    }
+    &-form {
+        width: 500px;
+        height: auto;
+        box-shadow: $box-shadow;
+        padding: 20px;
+        h3 {
+            @include flex(center, center);
+            font-size: 2rem;
+            color: $main-color;
+        }
+        &>* {
+            margin-bottom: 15px;
+        }
+        &__input {
+            display: block;
+            input {
+                display: block;
+                margin-left: 0;
+                width: 100%;
+            }
+        }
+        &__btn {
+            text-align: center;
+            margin: 30px;
+        }
+        &__submit {
+            button {
+                width: 100%;
+            }
+        }
+    }
+}
