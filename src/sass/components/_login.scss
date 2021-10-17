@@ -1,5 +1,5 @@
 .login {
-    @include flex(center, space-around);
+    @include flex(center, space-between);
     @include tablet {
         flex-direction: column;
         flex-wrap: wrap;
@@ -24,8 +24,12 @@
     &-form {
         width: 500px;
         height: auto;
+        margin: auto;
         box-shadow: $box-shadow;
         padding: 20px;
+        @include mobile {
+            width: auto;
+        }
         h3 {
             @include flex(center, center);
             font-size: 2rem;

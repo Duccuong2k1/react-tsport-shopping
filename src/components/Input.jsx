@@ -21,10 +21,12 @@ const Input = props => {
 }
 
 Input.propTypes = {
-    types: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
     value: PropTypes.string,
     placeholder:PropTypes.string,
     onClick: PropTypes.func,
+    id:PropTypes.string,
+    className:PropTypes.string,
 }
 
 export default Input
