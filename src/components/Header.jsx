@@ -1,9 +1,10 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link ,useLocation} from 'react-router-dom';
 import { FiAlignLeft, FiUser } from "react-icons/fi";
 import { GoSearch } from "react-icons/go";
 import { BsCartCheck } from "react-icons/bs";
 import { GrFormPrevious } from "react-icons/gr";
+import { useSelector } from 'react-redux';
 
 const mainNav = [
     {
@@ -25,25 +26,34 @@ const mainNav = [
 ]
 
 const Header = () => {
+    const [nameLogin,setNameLogin] = useState('')
+    const [imgLogin,setImgLogin] = useState('')
     const {pathname} = useLocation()
     const activeNav = mainNav.findIndex(e => e.path === pathname);
+    const cartItems = useSelector((state) => state.cartItems.value);
+
 
     const headerRef = useRef(null);
     useEffect(() => {
-        window.addEventListener('scroll', () =>{
-            if(document.body.scrollTop > 80 || document.documentElement.scrollTop> 80){
-                headerRef.current.classList.add('shrink');
-
-            }else{
-                headerRef.current.classList.remove('shrink');
+        window.addEventListener("scroll", () => {
+            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+                headerRef.current.classList.add('shrink')
+            } else {
+                headerRef.current.classList.remove('shrink')
             }
         })
-        return () => {
-            window.removeEventListener('scroll');
-        };
+        // return () => {
+        //     window.removeEventListener("scroll")
+        // };
     }, []);
     const menuRef = useRef(null);
     const menuToggle = ()=> menuRef.current.classList.toggle('active');
+    useEffect(() => {
+        setNameLogin(JSON.parse(localStorage.getItem('user')))
+        setImgLogin(JSON.parse(localStorage.getItem('imageUrl')))
+    },[])
+    console.log(imgLogin);
+
     return (
         <div className="header" ref={headerRef}>
             <div className="container">
@@ -76,13 +86,25 @@ const Header = () => {
                         <div className="header__menu__item header__menu__right__item">
                             <GoSearch/>
                         </div>
-                        <div className="header__menu__item header__menu__right__item">
+                        <div className="header__menu__item header__menu__right__item numCart">
                             <Link to="/cart">
                                 <BsCartCheck/>
+                                <span className={`${cartItems.length > 0 ? 'numberInCart' : ''}`}>{cartItems.length > 0 ? cartItems.length : ''}</span>
                             </Link>
                         </div>
                         <div className="header__menu__item header__menu__right__item">
-                            <FiUser/>
+                        <Link to="/login">
+                            {
+                                (nameLogin !== null && imgLogin !== null) ? (
+                                    <div className="userLogin">
+                                        <img src={imgLogin} alt="" className="userLogin__img" />
+                                        <p className="userLogin__name">{nameLogin}</p>
+                                    </div>
+                                ) : (
+                                    <FiUser/>
+                                )
+                            }
+                        </Link>
                         </div>
                     </div>
                 </div>

@@ -3,57 +3,51 @@ import { Link } from 'react-router-dom';
 import Grid from './Grid';
 const footerAboutLinks = [
     {
-        display:"Gioi thieu",
+        display:"Giới Thiệu SHEIN",
         path:"/about",
     },
     {
-        display:"lien he",
+        display:"Chương Trình Affiliate",
         path:"/about",
     },
     {
-        display:"tuyen dung",
+        display:"Blogger Thời Trang",
         path:"/about",
     },
-    {
-        display:"he thong cua hang",
-        path:"/about",
-    },
+    
 ];
 const footerContactLinks = [
     {
-        display:"Gioi thieu",
+        display:"Phí Vận Chuyển",
         path:"/about",
     },
     {
-        display:"Gioi thieu",
+        display:"Trả Lại",
         path:"/about",
     },
     {
-        display:"Gioi thieu",
+        display:"Hướng Dẫn Đặt Hàng",
         path:"/about",
     },
     {
-        display:"Gioi thieu",
+        display:"Làm Thế Nào Để Theo Dõi",
         path:"/about",
     },
 ];
 const footerCustomerLinks = [
     {
-        display:"chinh sach doi tra",
+        display:"Liên Hệ Chúng Tôi",
         path:"/about",
     },
     {
-        display:"chinh sach bao hang",
+        display:"Phương Thức Thanh Toán",
         path:"/about",
     },
     {
-        display:"hoan tien nhanh chong",
+        display:"Điểm Thưởng",
         path:"/about",
     },
-    {
-        display:"ship trong 48h",
-        path:"/about",
-    },
+    
 ];
 const Footer = () => {
     return (
@@ -67,7 +61,7 @@ const Footer = () => {
                 >
                     <div>
                         <div className="footer__title">
-                            <span>Tong dai ho tro</span>
+                            <span>THÔNG TIN CÔNG TY</span>
                         </div>
                         <div className="footer__content">
                             {
@@ -85,7 +79,7 @@ const Footer = () => {
                     </div>
                     <div>
                         <div className="footer__title">
-                            <span>Tong dai ho tro</span>
+                            <span>HỖ TRỢ KHÁCH HÀNG</span>
                         </div>
                         <div className="footer__content">
                             {
@@ -106,7 +100,7 @@ const Footer = () => {
                     </div>
                     <div>
                         <div className="footer__title">
-                            <span>Tong dai ho tro</span>
+                            <span>DỊCH VỤ KHÁCH HÀNG</span>
                         </div>
                         <div className="footer__content">
                             {
@@ -125,7 +119,7 @@ const Footer = () => {
                     </div>
                     <div className="footer__about">
                         <h3 className="footer__logo">TSport</h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus ratione recusandae nisi quaerat esse nesciunt beatae est praesentium culpa sequi!</p>
+                        <p>TSport cửa hàng thời trang phong cách trẻ trung năng động mạnh mẽ phù hợp với mọi lứa tuổi.</p>
                     </div>
 
                 </Grid>

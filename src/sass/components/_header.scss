@@ -67,6 +67,33 @@
                     margin-left: 10px;
                 }
             }
+            .numCart {
+                position: relative;
+                .numberInCart {
+                    border-radius: 50%;
+                    background-color: $main-color;
+                    color: $txt-white;
+                    font-size: 1rem;
+                    padding: 2px 5px;
+                    position: absolute;
+                    right: -10px;
+                    top: -10px;
+                }
+            }
+            .userLogin {
+                @include flex(center, center);
+                flex-direction: column;
+                &__name {
+                    font-size: 11px;
+                    font-weight: 600;
+                }
+                &__img {
+                    width: 30px;
+                    height: 30px;
+                    object-fit: cover;
+                    border-radius: 50%;
+                }
+            }
             @include mobile {
                 font-size: 1.5rem;
             }

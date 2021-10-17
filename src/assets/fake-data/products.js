@@ -1,6 +1,6 @@
 const product_01_image_01 = require('../images/products/product-01 (1).jpg').default
 const product_01_image_02 = require('../images/products/product-01 (2).jpg').default
-// const product_01_image_03 = require('../images/products/product-01 (3).jpg').default
+    // const product_01_image_03 = require('../images/products/product-01 (3).jpg').default
 
 const product_02_image_01 = require('../images/products/product-02 (1).jpg').default
 const product_02_image_02 = require('../images/products/product-02 (2).jpg').default
@@ -35,8 +35,7 @@ const product_11_image_02 = require('../images/products/product-11 (2).jpg').def
 const product_12_image_01 = require('../images/products/product-12 (1).jpg').default
 const product_12_image_02 = require('../images/products/product-12 (2).jpg').default
 
-const products = [
-    {
+const products = [{
         title: "Áo thun Dinosaur 01",
         price: '189000',
         image01: product_01_image_01,

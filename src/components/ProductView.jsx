@@ -63,6 +63,7 @@ const ProductView = props => {
                 "quantity":quantity,
                 "price":product.price,
             }))
+            alert('Sản phẩm đã được thêm vào giỏ hàng')
         }
     }
     const goToCart = () =>{
