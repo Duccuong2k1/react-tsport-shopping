@@ -31,11 +31,33 @@ export const cartSlice = createSlice({
             }
             localStorage.setItem('cartItems', JSON.stringify(sortItems(state.value)));
             // console.log(state.value);
+        },
+        updateItem: (state, action) => {
+            const itemUpdate = action.payload;
+            const item = findItem(state.value, itemUpdate);
+
+            if (item.length > 0) {
+                state.value = delItem(state.value, itemUpdate);
+
+                state.value = [...state.value, {
+                    ...itemUpdate,
+                    id: item[0].id
+                }]
+                localStorage.setItem('cartItems', JSON.stringify(sortItems(state.value)));
+            }
+        },
+        deleteItem: (state, action) => {
+            const itemDel = action.payload;
+            state.value = delItem(state.value, itemDel);
+            localStorage.setItem('cartItems', JSON.stringify(sortItems(state.value)));
+
+
+
         }
     }
 })
 
 
-export const { addItem } = cartSlice.actions;
+export const { addItem, updateItem, deleteItem } = cartSlice.actions;
 
 export default cartSlice.reducer;

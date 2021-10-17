@@ -111,7 +111,7 @@ const Home = () => {
                         col={5}
                         mdCol={3}
                         smCol={2}
-                        gap={20}
+                        gap={10}
                     >
                         {productData.getProducts(15).map((product,index)=>(
                             <ProductCard
