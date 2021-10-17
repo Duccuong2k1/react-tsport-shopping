@@ -10,7 +10,7 @@ import Contact from '../pages/Contact';
 const Routes = () => {
     return (
         <Switch>
-            <Route exact component={Home} path='/'/>
+            <Route exact component={Home} path='/react-tsport-shopping'/>
             <Route  component={Product} path='/catalog/:slug'/>
             <Route  component={Cart} path='/cart'/>
             <Route  component={Catalog} path='/catalog'/>

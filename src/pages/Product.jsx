@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import productData from '../assets/fake-data/products'
 import Grid from '../components/Grid'
 import Helmet from '../components/Helmet'

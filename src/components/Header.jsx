@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 const mainNav = [
     {
         display:"Trang chủ",
-        path:"/",
+        path:"/react-tsport-shopping",
     },
     {
         display:"Sản phẩm",
