@@ -42,9 +42,9 @@ const Header = () => {
                 headerRef.current.classList.remove('shrink')
             }
         })
-        // return () => {
-        //     window.removeEventListener("scroll")
-        // };
+        return () => {
+            window.removeEventListener("scroll")
+        };
     }, []);
     const menuRef = useRef(null);
     const menuToggle = ()=> menuRef.current.classList.toggle('active');
